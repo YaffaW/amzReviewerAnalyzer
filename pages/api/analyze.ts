@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export default async function POST(req: NextRequest) {
-  return NextResponse.json({
+  const { asin, region } = req.body;
+  let data = asin && region ? {
     overallSentiment: 2.8, // 平均星级（1-5）
     topComplaints: [
       { name: '电池续航', value: 42 },
@@ -17,7 +18,8 @@ export default async function POST(req: NextRequest) {
       "更换电池供应商 (当前批次: DL-2024Q1)",
       "增加包装缓冲层厚度至5mm",
     ]
-  });
+  } : {}
+  return NextResponse.json(data);
   // const { asin, region } = req.body;
   // try {
   //   // 实际调用SP-API的代码（示例）
