@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Create Project
+```bash
+# 1. 创建Next.js项目
+npx create-next-app@14.2.20 amz-review-analyzer --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+
+# 2. 安装依赖
+npm install @supabase/supabase-js openai inngest @tremor/react @upstash/redis
+npm install react-hook-form axios
+
+# 3. 部署到Vercel
+npm i -g vercel
+vercel deploy
+```
+
 ## Getting Started
 
 First, run the development server:
