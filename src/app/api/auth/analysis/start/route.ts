@@ -1,5 +1,5 @@
 // import { inngest } from '@/lib/inngest'; // 任务队列客户端
-
+export function POST() { }
 // export async function POST(request) {
 //   const { asin, userId } = await request.json();
 

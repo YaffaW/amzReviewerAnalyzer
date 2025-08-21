@@ -1,6 +1,7 @@
-// app/api/auth/amazon/route.js
 // import { NextRequest, NextResponse } from 'next/server';
+export function POST() {
 
+}
 // export async function POST(request: NextRequest) {
 //   const { spapi_oauth_code } = await request.json();
 
