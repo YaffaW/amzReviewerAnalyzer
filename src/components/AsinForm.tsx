@@ -14,8 +14,8 @@ export default function AsinForm({ onAnalysisComplete }: {
         region: 'US' // 默认美国站
       });
       onAnalysisComplete(res.data);
-    } catch (error: any) {
-      alert('分析失败: ' + error.response?.data?.error || '服务异常');
+    } catch (error) {
+      alert('分析失败: ' + JSON.stringify(error) || '服务异常');
     }
   };
 

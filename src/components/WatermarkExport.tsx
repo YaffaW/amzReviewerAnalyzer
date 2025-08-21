@@ -25,7 +25,7 @@ export default function WatermarkExport({ asin, isProUser }: {
       a.click();
       window.URL.revokeObjectURL(url);
     } catch (error) {
-      alert('导出失败，请重试');
+      alert(`导出失败，请重试: ${JSON.stringify(error) || '服务异常'}`);
     } finally {
       setIsGenerating(false);
     }
