@@ -4,18 +4,17 @@ import axios from 'axios';
 export default function AsinForm({ onAnalysisComplete }: {
   onAnalysisComplete: (data: any) => void
 }) {
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm();
+  const { register, handleSubmit, formState: { isSubmitting } } = useForm<{ asin: string }>();
 
-  const onSubmit = async (data: { asin: string }) => {
+  const onSubmit: (data: { asin: string }) => Promise<void> = async (data) => {
     try {
       // 调用本地API路由（避免前端直接暴露SP-API密钥）
       const res = await axios.post('/api/analyze', {
         asin: data.asin.toUpperCase().trim(),
         region: 'US' // 默认美国站
       });
-      console.log('Analysis result:', res.data);
       onAnalysisComplete(res.data);
-    } catch (error) {
+    } catch (error: any) {
       alert('分析失败: ' + error.response?.data?.error || '服务异常');
     }
   };

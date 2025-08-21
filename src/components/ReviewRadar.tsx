@@ -56,7 +56,7 @@ export default function ReviewRadar({ report }: { report: any }) {
           <Title>产品改进建议</Title>
         </div>
         <ul className="mt-4 space-y-2">
-          {data.suggestedFixes.map((fix, idx) => (
+          {data.suggestedFixes.map((fix: string, idx: number) => (
             <li key={idx} className="flex items-start">
               <span className="text-green-500 mr-2">✓</span>
               <span>{fix}</span>

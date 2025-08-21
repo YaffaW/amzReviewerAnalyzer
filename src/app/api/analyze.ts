@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     const spApiResponse = await fetch('https://sellingpartnerapi.amazon.com/reviews', {
       method: 'POST',
       headers: {
-        'x-amz-access-token': process.env.SP_API_ACCESS_TOKEN,
+        'x-amz-access-token': process.env.SP_API_ACCESS_TOKEN || '',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ asin, region })
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const data = await spApiResponse.json();
     return NextResponse.json(data);
 
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json(
       { error: error.message || '服务器错误' },
       { status: 500 }
