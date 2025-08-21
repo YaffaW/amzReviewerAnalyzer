@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export default async function POST(req: NextRequest) {
   const { asin, region } = await req.json();
-  let data = asin && region ? {
+  const data = asin && region ? {
     overallSentiment: 2.8, // 平均星级（1-5）
     topComplaints: [
       { name: '电池续航', value: 42 },
