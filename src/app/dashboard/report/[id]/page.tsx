@@ -1,4 +1,3 @@
-// app/dashboard/report/[id]/page.js
 export default async function ReportPage({ params }) {
   const { data: report } = await supabase
     .from('analysis_results')

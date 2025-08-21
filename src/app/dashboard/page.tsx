@@ -1,11 +1,11 @@
-import { createClient } from '@/utils/supabase/server';
+// import { createClient } from '@/utils/supabase/server';
 
-export default async function DashboardPage() {
-  const supabase = createClient();
-  const { data: reports, error } = await supabase
-    .from('analysis_results')
-    .select('id, asin, created_at, status')
-    .order('created_at', { ascending: false });
+export default async function DashboardPage(reports) {
+  // const supabase = createClient();
+  // const { data: reports, error } = await supabase
+  //   .from('analysis_results')
+  //   .select('id, asin, created_at, status')
+  //   .order('created_at', { ascending: false });
 
   return (
     <div>
