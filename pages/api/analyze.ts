@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export default async function POST(req: NextRequest, res: NextResponse) {
-  return res.json({
+export default async function POST(req: NextRequest) {
+  return NextResponse.json({
     overallSentiment: 2.8, // 平均星级（1-5）
     topComplaints: [
       { name: '电池续航', value: 42 },
